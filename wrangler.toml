@@ -1,0 +1,26 @@
+# Cloudflare Pages Configuration for Vynthen AI
+# This file configures the Cloudflare Workers/Pages deployment
+
+name = "vynthen-ai"
+compatibility_date = "2024-01-01"
+
+# Pages configuration
+pages_build_output_dir = ".vercel/output/static"
+
+# Environment variables (set these in Cloudflare Dashboard)
+# [vars]
+# NEXT_PUBLIC_SUPABASE_URL = "your-supabase-url"
+# NEXT_PUBLIC_SUPABASE_ANON_KEY = "your-supabase-anon-key"
+
+# KV Namespace for rate limiting (optional but recommended)
+# [[kv_namespaces]]
+# binding = "RATE_LIMIT_KV"
+# id = "your-kv-namespace-id"
+
+# Build configuration
+[build]
+command = "npx @cloudflare/next-on-pages"
+
+# Compatibility flags for Next.js
+[compatibility_flags]
+nodejs_compat = true
